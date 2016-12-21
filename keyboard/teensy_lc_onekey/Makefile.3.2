@@ -1,5 +1,5 @@
 # Target file name (without extension).
-PROJECT = ch
+PROJECT = beeboard
 
 # Directory common source files exist
 TMK_DIR = ../../tmk_core
@@ -9,12 +9,13 @@ TARGET_DIR = .
 
 # project specific files
 SRC =	matrix.c \
+            keymap_common.c \
 	    led.c
 
 ifdef KEYMAP
     SRC := keymap_$(KEYMAP).c $(SRC)
 else
-    SRC := keymap_plain.c $(SRC)
+    SRC := keymap_bee.c $(SRC)
 endif
 
 CONFIG_H = config.h
